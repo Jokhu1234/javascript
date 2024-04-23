@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Products</title>
+<link rel="stylesheet"  href="/styles.css">
+</head>
+<body>
+<h1>Products</h1>
+ 
+    <div id="myProducts"></div>
+ 
+    <hr />
+ 
+    <p id="demo"></p>
+<script>
+      class Laptop {
+        constructor(brand, display, memory, color, price) {
+          this.brand = brand;
+          this.display = display;
+          this.memory = memory;
+          this.color = color;
+          this.price = price;
+         
+        }
+     
+        showHtmlLaptopDetails() {
+            return `<hr><h2> ${this.brand}</h2>
+              <h3>Display: ${this.display}</h3>
+            <h3>Memory: ${this.memory}</h3>
+            <h3>Color: ${this.color}</h3>
+            <h3>Price: $${this.price}</h3>
+
+
+              `;
+
+
+        }
+ 
+        showLaptopDetails() {
+          console.log(
+            "My Laptop " +
+              this.brand +
+              "display size is " +
+              this.display +
+              "\nThe memory is : " +
+              this.memory +
+              "\n the color is :" +
+              this.color +
+              "\n the price is :" +
+              this.price 
+            
+          );
+        }
+ 
+
+      }
+
+    let html = [];
+        
+        const myLenovo = new Laptop("ThinkPad T16", "16 inch", "16 GB", "Silver", "2087.40");
+            html.push(myLenovo.showHtmlLaptopDetails());   
+
+            const myAcer = new Laptop("Acer Aspire", "15.6 inch", "16 GB", "Black", "699.99");
+            html.push(myAcer.showHtmlLaptopDetails());   
+
+            const myHP = new Laptop("HP", "15.6 inch", "8 GB", "Silver", "499.99");
+            html.push(myHP.showHtmlLaptopDetails());   
+
+            const myDell = new Laptop("Dell Inspiron", "15.6 inch", "16 GB", "Black", "1089.99");
+            html.push(myDell.showHtmlLaptopDetails());   
+ 
+     
+      document.getElementById("myProducts").innerHTML = html;
+ 
+  </script>
+</body>
+</html>
